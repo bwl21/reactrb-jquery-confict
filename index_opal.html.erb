@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>reactrb testcase</title>
+
+  <script src="jquery-3.0.0.min.js" type="application/javascript"></script>
+  <script src="jquery-migrate-1.4.1.min.js" type="application/javascript"></script>
+
+
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body style="height: 100%;" onbeforeunload="return 'hugo';">
+<div id="layout" style="height: calc(100% - 25px);">
+  <H1>This shows reactrb jquery trouble</H1>
+  <H2>let react work but event handler fail</H2>
+  <p>Uncomment Line 5 in application.rb.</p>
+  <p>hitting <kbd>cmd</kbd> - </kbc>K</kbd> does nothing.
+  but you see the reactrb gnerated clock running here: <strong class="react-status-clock"></strong></p>
+
+  <h2>remove react to see event handler work</h2>
+  <p>Comment out liine 5 in application.rb</p>
+  <p>hitting <kbd>cmd</kbd> - </kbc>K</kbd> gives an alert</p>
+  <p>but you see the reactrb gnerated clock <strong>not</strong> running here:
+    <strong class="react-status-clock"></strong></p>
+
+  <h2>removing my opal-jquery does not work</h2>
+  <p>if I uncomment line 2 in application.rb, then Document is no longer defined.</p>
+
+  <hr/>
+  <p class="status">status unknown</p>
+
+</div>
+
+<%= begin
+      result = javascript_include_analytics()
+    rescue
+      result = "<!-- running in rackup server, no analytics -->"
+    end
+    result
+%>
+
+
+</body>
+</html>
