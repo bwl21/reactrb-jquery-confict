@@ -11,4 +11,4 @@ gem 'vector2d', "~> 2.1.0"
 gem 'pry'
 gem 'graphviz'
 gem 'bundler'
-gem 'reactrb'
+gem 'reactrb', '~> 0.9.0'
